@@ -7,7 +7,7 @@ import Nprogress from 'nprogress';
 import useUserStore from '@/store/modules/user';
 //引入大仓库
 import pinia from '@/store'
-let userStore = useUserStore(pinia);
+let userStore:any = useUserStore(pinia);
 //引入进度条的样式
 import "nprogress/nprogress.css"
 //进度条的加载小圆球不要
@@ -31,7 +31,7 @@ router.beforeEach((to, _from, next) => {
         if (whiteList.includes(to.path)) {
             next();
         } else {
-            //登录组件显示不来
+            //登录组件显示
             userStore.visiable = true;
             next({ path: '/home', query: { redirect: to.fullPath } })
         }

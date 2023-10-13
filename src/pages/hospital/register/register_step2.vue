@@ -153,7 +153,7 @@
     //提交订单
     let result: SubmitOrder = await reqSubmitOrder(hoscode, scheduleId, patientId);
     //提交订单成功
-    if (result.code !== 200) {
+    if (result.code == 200) {
       $router.push({ path: "/user/order", query: { orderId: result.data } });
     } else {
       ElMessage({

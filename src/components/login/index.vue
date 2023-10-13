@@ -40,6 +40,7 @@
             <div class="webchat" v-show="scene == 1">
               <!-- 在这个容器当中显示微信扫码登录页面 -->
               <div id="login_container"></div>
+
               <div class="phone" @click="handler">
                 <p>手机短信验证码登录</p>
                 <svg t="1685676069573" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -139,6 +140,7 @@ const changeScene = async () => {
 
   let redirect_URL = encodeURIComponent(window.location.origin + "/wxlogin");
   let result: WXLoginResponseData = await reqWxLogin(redirect_URL);
+  
   console.log(result);
   
   //生成微信扫码登录二维码页面

@@ -8,6 +8,8 @@ import { SET_TOKEN } from '@/utils/user';
 import { useRoute } from 'vue-router';
 //获取路由对象
 let $route = useRoute();
+console.log(123);
+
 
 
 //持久化存储用户信息

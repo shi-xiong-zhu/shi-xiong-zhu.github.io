@@ -16,7 +16,7 @@ const request = axios.create({
 });
 
 //请求拦截器
-request.interceptors.request.use((config) => {
+request.interceptors.request.use((config:any) => {
       //获取用户仓库
       let userStore = useUserStore();
       //token:公共参数,如果用户登录了需要携带
@@ -29,10 +29,10 @@ request.interceptors.request.use((config) => {
       return config;
 });
 //响应拦截器
-request.interceptors.response.use((response) => {
+request.interceptors.response.use((response:any) => {
       //响应拦截器成功的回调,一般会进行简化数据
       return response.data;
-}, (error) => {
+}, (error:any) => {
       //处理http网络错误
       let status = error.response.status;
       switch (status) {
